@@ -28,7 +28,7 @@ OE_VERSION="15.0"
 # Set this to True if you want to install the Odoo enterprise version!
 IS_ENTERPRISE="False"
 # Set this to True if you want to install Nginx!
-INSTALL_NGINX="False"
+INSTALL_NGINX="True"
 # Set the superadmin password - if GENERATE_RANDOM_PASSWORD is set to "True" we will automatically generate a random password, otherwise we use this one
 OE_SUPERADMIN="admin"
 # Set to "True" to generate a random password, "False" to use the variable in OE_SUPERADMIN
@@ -41,7 +41,7 @@ LONGPOLLING_PORT="8072"
 # Set to "True" to install certbot and have ssl enabled, "False" to use http
 ENABLE_SSL="True"
 # Provide Email to register ssl certificate
-ADMIN_EMAIL="odoo@example.com"
+ADMIN_EMAIL="cristina.martin.it@gmail.com"
 ##
 ###  WKHTMLTOPDF download links
 ## === Ubuntu Trusty x64 & x32 === (for other distributions please replace these two links,
@@ -75,7 +75,8 @@ sudo su - postgres -c "createuser -s $OE_USER" 2> /dev/null || true
 # Install Dependencies
 #--------------------------------------------------
 echo -e "\n--- Installing Python 3 + pip3 --"
-sudo apt-get install git python3 python3-pip build-essential wget python3-dev python3-venv python3-wheel libxslt-dev libzip-dev libldap2-dev libsasl2-dev python3-setuptools node-less libpng12-0 libjpeg-dev gdebi -y
+# sudo apt-get install git python3 python3-pip build-essential wget python3-dev python3-venv python3-wheel libxslt-dev libzip-dev libldap2-dev libsasl2-dev python3-setuptools node-less libpng12-0 libjpeg-dev gdebi -y
+sudo apt-get install python3-pip python3-dev libxml2-dev libxslt1-dev libldap2-dev libsasl2-dev libtiff5-dev libjpeg8-dev libopenjp2-7-dev zlib1g-dev libfreetype6-dev liblcms2-dev libwebp-dev libharfbuzz-dev libfribidi-dev libxcb1-dev libpq-dev
 
 echo -e "\n---- Install python packages/requirements ----"
 sudo -H pip3 install -r https://github.com/odoo/odoo/raw/${OE_VERSION}/requirements.txt
@@ -139,7 +140,8 @@ if [ $IS_ENTERPRISE = "True" ]; then
 
     echo -e "\n---- Added Enterprise code under $OE_HOME/enterprise/addons ----"
     echo -e "\n---- Installing Enterprise specific libraries ----"
-    sudo -H pip3 install num2words ofxparse dbfread ebaysdk firebase_admin pyOpenSSL
+    sudo -H pip3 install num2words ofxparse dbfread ebaysdk firebase_admin pyOpen
+    
     sudo npm install -g less
     sudo npm install -g less-plugin-clean-css
 fi
