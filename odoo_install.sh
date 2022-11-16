@@ -43,7 +43,7 @@ LONGPOLLING_PORT="8072"
 # Set to "True" to install certbot and have ssl enabled, "False" to use http
 ENABLE_SSL="True"
 # Provide Email to register ssl certificate
-ADMIN_EMAIL="odoo@example.com"
+ADMIN_EMAIL="cristina.marrod@gmail.com"
 ##
 ###  WKHTMLTOPDF download links
 ## === Ubuntu Trusty x64 & x32 === (for other distributions please replace these two links,
@@ -98,6 +98,12 @@ sudo -H pip3 install -r https://raw.githubusercontent.com/cristinamartinrod/Inst
 echo -e "\n---- Installing nodeJS NPM and rtlcss for LTR support ----"
 sudo apt-get install nodejs npm -y
 sudo npm install -g rtlcss
+
+#nuevas
+sudo apt install python3-testresources
+sudo -H pip3 install num2words ofxparse dbfread ebaysdk firebase_admin pyOpenSSL
+sudo npm install -g less
+sudo npm install -g less-plugin-clean-css
 
 #--------------------------------------------------
 # Install Wkhtmltopdf if needed
