@@ -98,6 +98,13 @@ echo -e "\n---- Installing nodeJS NPM and rtlcss for LTR support ----"
 sudo apt-get install nodejs npm -y
 sudo npm install -g rtlcss
 
+
+echo -e "\n---- Installing Enterprise specific libraries ----"
+sudo apt install python3-testresources
+sudo -H pip3 install num2words ofxparse dbfread ebaysdk firebase_admin pyOpenSSL
+sudo npm install -g less
+sudo npm install -g less-plugin-clean-css
+
 #--------------------------------------------------
 # Install Wkhtmltopdf if needed
 #--------------------------------------------------
